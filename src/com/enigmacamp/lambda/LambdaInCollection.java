@@ -1,7 +1,11 @@
 package com.enigmacamp.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class LambdaInCollection {
@@ -30,6 +34,28 @@ public class LambdaInCollection {
         );
 
         /*
+            Creating Stream
+         */
+        Collection<String> collection = Arrays.asList("coll-a", "coll-b", "coll-c");
+        Stream<String> streamOfCollection = collection.stream();
+        streamOfCollection.forEach((coll) -> System.out.println(coll));
+
+        Stream<String> streamBuilder =
+                Stream.<String>builder().add("builder-a").add("builder-b").add("builder-c").build();
+
+        streamBuilder.forEach((coll) -> System.out.println(coll));
+
+        IntStream.range(1, 10).forEach((i) -> System.out.println("Iteration " + i));
+
+        /*
+            Map example
+         */
+        System.out.println("Map");
+        list.stream()
+                .map((name) -> name.toUpperCase())
+                .forEach((upperCasedName) -> System.out.println(upperCasedName));
+
+        /*
             Filter example
          */
         System.out.println("Filtering");
@@ -55,6 +81,20 @@ public class LambdaInCollection {
                 .reduce(0.0, (totalPrice, price) -> totalPrice + price);
         System.out.println(grandTotal);
 
+        /*
+            Collect example
+         */
+        List<String> collectorCollection =
+                billTransactions.stream().map(bill -> bill.getName()).collect(Collectors.toList());
+        System.out.println(collectorCollection);
+
+        /*
+            ParallelStream example
+         */
+        boolean isQtyMoreThanOneExist = billTransactions.parallelStream()
+                .map(bill -> bill.getQty())
+                .anyMatch(qty -> qty > 1);
+        System.out.println(isQtyMoreThanOneExist);
     }
 }
 
