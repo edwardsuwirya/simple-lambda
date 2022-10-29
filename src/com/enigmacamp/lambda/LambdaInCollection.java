@@ -46,6 +46,15 @@ public class LambdaInCollection {
         streamBuilder.forEach((coll) -> System.out.println(coll));
 
         IntStream.range(1, 10).forEach((i) -> System.out.println("Iteration " + i));
+
+        /*
+            Map example
+         */
+        System.out.println("Map");
+        list.stream()
+                .map((name) -> name.toUpperCase())
+                .forEach((upperCasedName) -> System.out.println(upperCasedName));
+
         /*
             Filter example
          */
@@ -76,7 +85,7 @@ public class LambdaInCollection {
             Collect example
          */
         List<String> collectorCollection =
-                billTransactions.stream().map(BillTransaction::getName).collect(Collectors.toList());
+                billTransactions.stream().map(bill -> bill.getName()).collect(Collectors.toList());
         System.out.println(collectorCollection);
 
         /*
