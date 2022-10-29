@@ -1,19 +1,28 @@
 package com.enigmacamp.lambda;
 
+@FunctionalInterface
 interface Printable {
     void print(String message);
 }
 
-public class SimpleLambda {
-    public static void main(String[] args) {
-        Printable printable = new SimplePrint();
-        printable.print("Enigma");
-    }
+@FunctionalInterface
+interface MesinHitung {
+    int hitung(int a, int b);
 }
 
-class SimplePrint implements Printable {
-    @Override
-    public void print(String message) {
-        System.out.println(message);
+public class SimpleLambda {
+    public static void main(String[] args) {
+        Printable printable = (message) -> {
+            System.out.println(message);
+        };
+        printable.print("Enigma");
+
+        MesinHitung penjumlahan = (angka1, angka2) -> angka1 + angka2;
+        int hasilPenjumlahan = penjumlahan.hitung(10, 3);
+        printable.print(String.valueOf(hasilPenjumlahan));
+
+        MesinHitung perkalian = (int1, int2) -> int1 * int2;
+        int hasilPerkalian = perkalian.hitung(2, 3);
+        printable.print(String.valueOf(hasilPerkalian));
     }
 }

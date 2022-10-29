@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e31b42fd-683c-49d5-8215-d79cafec5ea7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-lambda.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/enigmacamp/lambda/SimpleLambda.java" afterDir="false" />
+    <list default="true" id="e31b42fd-683c-49d5-8215-d79cafec5ea7" name="Changes" comment="Simple Lambda">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/enigmacamp/lambda/SimpleLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/enigmacamp/lambda/SimpleLambda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +18,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GmpLjJQW8gvuaBotjs2fML6TTN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -74,8 +76,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667003559668</updated>
-      <workItem from="1667003560843" duration="321000" />
+      <workItem from="1667003560843" duration="1402000" />
     </task>
+    <task id="LOCAL-00001" summary="Simple Lambda">
+      <created>1667003904309</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667003904309</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +101,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Simple Lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple Lambda" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
