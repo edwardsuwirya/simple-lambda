@@ -1,7 +1,6 @@
 package com.enigmacamp.lambda;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -12,11 +11,16 @@ public class LambdaInCollection {
         list.add("Fadli");
         list.add("Agus");
 
+        /*
+            ForEach example
+         */
         System.out.println("For Each");
         list.forEach(
                 (nama) -> System.out.println(nama)
         );
-
+        /*
+            Sort example
+         */
         System.out.println("Sorting");
         list.sort((nama1, nama2) -> {
             return nama1.compareTo(nama2);
@@ -25,8 +29,78 @@ public class LambdaInCollection {
                 (nama) -> System.out.println(nama)
         );
 
+        /*
+            Filter example
+         */
         System.out.println("Filtering");
         Stream result = list.stream().filter((nama) -> nama.startsWith("A"));
         result.forEach(n -> System.out.println(n));
+
+        /*
+            Reduce example
+         */
+        List<BillTransaction> billTransactions = new ArrayList<>();
+        billTransactions.add(new BillTransaction("1", "Susu", 1, 1400));
+        billTransactions.add(new BillTransaction("2", "Kopi", 1, 800));
+        billTransactions.add(new BillTransaction("3", "Gula", 2, 425));
+        billTransactions.add(new BillTransaction("4", "Creamer", 1, 950));
+
+        int totalQty = billTransactions.stream()
+                .map(bill -> bill.getQty())
+                .reduce(0, (total, qty) -> total + qty);
+        System.out.println(totalQty);
+
+        double grandTotal = billTransactions.stream()
+                .map(bill -> bill.getQty() * bill.getPrice())
+                .reduce(0.0, (totalPrice, price) -> totalPrice + price);
+        System.out.println(grandTotal);
+
+    }
+}
+
+class BillTransaction {
+    private String id;
+    private String name;
+
+    private int qty;
+    private double price;
+
+    public BillTransaction(String id, String name, int qty, double price) {
+        this.id = id;
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
